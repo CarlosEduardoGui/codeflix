@@ -8,6 +8,13 @@ import { DataGrid, GridColDef, GridRenderCellParams, GridRowsProp, GridToolbar }
 export const CategoryList = () => {
     const categories = useAppSelector(selectCategories);
 
+    const componentProps = {
+        toolbar: {
+            showQuickFilter: true,
+            quickFilterProps: { debounceMs: 500 },
+        },
+    }
+
     const rows: GridRowsProp = categories.map((category) => ({
         id: category.id,
         name: category.name,
@@ -20,7 +27,8 @@ export const CategoryList = () => {
         {
             field: 'name',
             headerName: 'Name',
-            flex: 1
+            flex: 1,
+            renderCell: renderNameCell
         },
         {
             field: 'isActive',
@@ -41,7 +49,17 @@ export const CategoryList = () => {
             renderCell: renderActionsCell
         },
     ];
-    
+
+    function renderNameCell(rowData: GridRenderCellParams) {
+        return (
+            <Link
+                style={{ textDecoration: 'none' }}
+                to={`/categories/edit/${rowData.id}`}
+            >
+                <Typography color="primary">{rowData.value}</Typography>
+            </Link>
+        )
+    }
     function renderIsActiveCell(rowData: GridRenderCellParams) {
         return (
             <Typography color={rowData.value ? "primary" : "secondary"}>
@@ -50,7 +68,7 @@ export const CategoryList = () => {
         );
     }
 
-    function renderActionsCell(params: GridRenderCellParams){
+    function renderActionsCell(params: GridRenderCellParams) {
         return (
             <IconButton
                 color="secondary"
@@ -76,23 +94,18 @@ export const CategoryList = () => {
                 </Button>
             </Box>
 
-            <div style={{ height: 300, width: '100%' }}>
+            <Box sx={{ display: "flex", height: 500}}>
                 <DataGrid
-                    components={{Toolbar: GridToolbar}}
+                    components={{ Toolbar: GridToolbar }}
                     disableColumnSelector={true}
                     disableColumnFilter={true}
                     disableDensitySelector={true}
                     rowsPerPageOptions={[5, 10, 20, 50, 100]}
                     rows={rows}
                     columns={columns}
-                    componentsProps={{
-                        toolbar: {
-                          showQuickFilter: true,
-                          quickFilterProps: { debounceMs: 500 },
-                        },
-                      }}
+                    componentsProps={componentProps}
                 />
-            </div>
+            </Box>
         </Box>
     );
 };

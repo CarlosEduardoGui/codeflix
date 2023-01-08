@@ -1,13 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
 
-interface Category {
+export interface Category {
   id: string;
   name: string;
   is_active: boolean;
   created_at: string;
-  update_at: string;
-  delete_at: null | string;
+  updated_at: string;
+  deleted_at: null | string;
   description: null | string;
 }
 
@@ -16,9 +16,9 @@ const category: Category = {
   name: "Action",
   description: "Very action by John",
   is_active: true,
-  delete_at: null,
+  deleted_at: null,
   created_at: "2022-08-15T10:59:09+0000",
-  update_at: "2022-08-15T10:59:09+0000",
+  updated_at: "2022-08-15T10:59:09+0000",
 };
 
 export const initialState = [
@@ -37,5 +37,19 @@ const categoriesSlice = createSlice({
 });
 
 export const selectCategories = (state: RootState) => state.categories;
+
+export const selectCategoryById = (state: RootState, id: string) => {
+  const category = state.categories.find((category) => category.id === id);
+  
+  return category || {
+    id: "",
+    name: "",
+    description: "",
+    is_active: false,
+    created_at: "",
+    updated_at: "",
+    deleted_at: null
+  };
+}
 
 export default categoriesSlice.reducer;
