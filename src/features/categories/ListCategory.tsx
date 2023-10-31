@@ -1,11 +1,12 @@
 import { Box, Button, IconButton, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
-import { useAppSelector } from "../../app/hooks";
-import { selectCategories } from "./categorySlice";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { deleteCategory, selectCategories } from "./categorySlice";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { DataGrid, GridColDef, GridRenderCellParams, GridRowsProp, GridToolbar } from "@mui/x-data-grid";
 
 export const CategoryList = () => {
+    const dispatch = useAppDispatch();
     const categories = useAppSelector(selectCategories);
 
     const componentProps = {
@@ -46,9 +47,14 @@ export const CategoryList = () => {
             field: 'id',
             headerName: 'Actions',
             flex: 1,
+            type: 'string',
             renderCell: renderActionsCell
         },
     ];
+
+    function handleDeleteCategory(id: string) {
+        dispatch(deleteCategory(id));
+    }
 
     function renderNameCell(rowData: GridRenderCellParams) {
         return (
@@ -72,7 +78,7 @@ export const CategoryList = () => {
         return (
             <IconButton
                 color="secondary"
-                onClick={() => console.log("clicked")}
+                onClick={() => handleDeleteCategory(params.value)}
                 aria-label="delete"
             >
                 <DeleteIcon />
@@ -94,7 +100,7 @@ export const CategoryList = () => {
                 </Button>
             </Box>
 
-            <Box sx={{ display: "flex", height: 500}}>
+            <Box sx={{ display: "flex", height: 500 }}>
                 <DataGrid
                     components={{ Toolbar: GridToolbar }}
                     disableColumnSelector={true}
