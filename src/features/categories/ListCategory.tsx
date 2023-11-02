@@ -4,9 +4,11 @@ import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { deleteCategory, selectCategories } from "./categorySlice";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { DataGrid, GridColDef, GridRenderCellParams, GridRowsProp, GridToolbar } from "@mui/x-data-grid";
+import { useSnackbar } from "notistack";
 
 export const CategoryList = () => {
     const dispatch = useAppDispatch();
+    const { enqueueSnackbar } = useSnackbar();
     const categories = useAppSelector(selectCategories);
 
     const componentProps = {
@@ -54,6 +56,7 @@ export const CategoryList = () => {
 
     function handleDeleteCategory(id: string) {
         dispatch(deleteCategory(id));
+        enqueueSnackbar("Category has been deleted!", { variant: "success" });
     }
 
     function renderNameCell(rowData: GridRenderCellParams) {
