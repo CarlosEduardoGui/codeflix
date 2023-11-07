@@ -7,10 +7,14 @@ import { CategoriesTable } from "./components/CategoryTable";
 import { GridFilterModel } from "@mui/x-data-grid";
 
 export const CategoryList = () => {
+    const [page, setPage] = useState(1);
     const [perPage] = useState(10);
     const [rowsPerPage] = useState([10, 25, 50, 100]);
     const [search, setSearch] = useState("");
-    const { data, isFetching, error } = useGetCategoriesQuery();
+
+    const options = { perPage, search, page };
+
+    const { data, isFetching, error } = useGetCategoriesQuery(options);
     const [deleteCategory, deleteCategoryStatus] = useDeleteCategoryMutation();
     const { enqueueSnackbar } = useSnackbar();
 
