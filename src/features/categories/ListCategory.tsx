@@ -8,7 +8,7 @@ import { GridFilterModel } from "@mui/x-data-grid";
 
 export const CategoryList = () => {
     const [page, setPage] = useState(1);
-    const [perPage] = useState(10);
+    const [perPage, setPerPage] = useState(10);
     const [rowsPerPage] = useState([10, 25, 50, 100]);
     const [search, setSearch] = useState("");
 
@@ -19,15 +19,20 @@ export const CategoryList = () => {
     const { enqueueSnackbar } = useSnackbar();
 
     function handleOnPageChange() {
-
+        setPage(page + 1);
     }
 
     function handleOnPageSizeChange() {
-
+        setPerPage(perPage);
     }
 
     function handleOnFilterChange(filterModel: GridFilterModel) {
+        if (filterModel.quickFilterValues?.length) {
+            const search = filterModel.quickFilterValues.join("");
+            setSearch(search);
+        }
 
+        return setSearch("");
     }
 
     async function handleDeleteCategory(id: string) {
