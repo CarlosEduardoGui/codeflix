@@ -13,7 +13,8 @@ export const reducer = {
 }
 
 export const store = configureStore({
-  reducer: reducer
+  reducer: reducer,
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(apiSlice.middleware)
 });
 
 export type AppDispatch = typeof store.dispatch;
