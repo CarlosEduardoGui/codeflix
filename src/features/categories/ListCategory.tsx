@@ -62,17 +62,17 @@ export const CategoryList = () => {
                 >
                     New Category
                 </Button>
-                <CategoriesTable
-                    data={data}
-                    isFetching={isFetching}
-                    perPage={perPage}
-                    rowsPerPage={rowsPerPage}
-                    handleDelete={handleDeleteCategory}
-                    handleOnPageChange={handleOnPageChange}
-                    handleOnPageSizeChange={handleOnPageSizeChange}
-                    handleFilterChange={handleOnFilterChange}
-                />
             </Box>
+            <CategoriesTable
+                data={data}
+                isFetching={isFetching}
+                perPage={perPage}
+                rowsPerPage={rowsPerPage}
+                handleDelete={handleDeleteCategory}
+                handleOnPageChange={handleOnPageChange}
+                handleOnPageSizeChange={handleOnPageSizeChange}
+                handleFilterChange={handleOnFilterChange}
+            />
         </Box>
     );
 };
