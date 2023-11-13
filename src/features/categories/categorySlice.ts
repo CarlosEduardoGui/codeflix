@@ -60,7 +60,7 @@ function createCategoryMutation(category: Category) {
 
 function updateCategoryMutation(category: Category) {
   return {
-    url: endpointUrl,
+    url: `${endpointUrl}/${category.id}`,
     method: "PUT",
     body: category
   }
