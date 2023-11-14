@@ -4,7 +4,7 @@ const baseUrl = 'https://codeflixadm.bsite.net';
 
 export const apiSlice = createApi({
     reducerPath: "api",
-    tagTypes: ["Categories"],
+    tagTypes: ["Categories", "CastMembers"],
     endpoints: (builder) => ({}),
     baseQuery: fetchBaseQuery({ baseUrl })
 })

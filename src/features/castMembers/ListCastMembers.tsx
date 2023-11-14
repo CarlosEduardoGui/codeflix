@@ -1,10 +1,10 @@
-import { Box, Button, Typography } from "@mui/material";
-import { Link } from "react-router-dom";
-import { useDeleteCategoryMutation, useGetCategoriesQuery } from "./categorySlice";
-import { useSnackbar } from "notistack";
-import { useEffect, useState } from "react";
-import { CategoriesTable } from "./components/CategoryTable";
-import { GridFilterModel } from "@mui/x-data-grid";
+import { useSnackbar } from 'notistack';
+import React, { useEffect, useState } from 'react'
+import { useDeleteCastMemberMutation, useGetCastMembersQuery } from './castMembersSlice';
+import { GridFilterModel } from '@mui/x-data-grid';
+import { Box, Button } from '@mui/material';
+import { Link } from 'react-router-dom';
+import { CastMembersTable } from './components/CastMemberTable';
 
 const initialOptions = {
     page: 1,
@@ -13,11 +13,11 @@ const initialOptions = {
     rowsPerPage: [10, 20, 30]
 }
 
-export const CategoryList = () => {
-    const [options, setOptions] = useState(initialOptions);
-    const { data, isFetching, error } = useGetCategoriesQuery(options);
-    const [deleteCategory, deleteCategoryStatus] = useDeleteCategoryMutation();
+export const ListCastMembers = () => {
     const { enqueueSnackbar } = useSnackbar();
+    const [options, setOptions] = useState(initialOptions);
+    const [deleteCastMember, deleteCastMemberStatus] = useDeleteCastMemberMutation();
+    const { data, isFetching, error } = useGetCastMembersQuery(options);
 
     function handleOnPageChange(page: number) {
         options.page = page;
@@ -38,20 +38,20 @@ export const CategoryList = () => {
         return setOptions({ ...options, search: "" });
     }
 
-    async function handleDeleteCategory(id: string) {
-        await deleteCategory({ id });
+    async function handleDeleteCastMember(id: string) {
+        await deleteCastMember({ id });
     }
 
     useEffect(() => {
-        if (deleteCategoryStatus.isSuccess) {
-            enqueueSnackbar("Category has been deleted!", { variant: "success" });
+        if (deleteCastMemberStatus.isSuccess) {
+            enqueueSnackbar("Cast Member has been deleted!", { variant: "success" });
         }
 
-        if (deleteCategoryStatus.error) {
-            enqueueSnackbar("Category not deleted", { variant: "error" });
+        if (deleteCastMemberStatus.error) {
+            enqueueSnackbar("Cast Member not deleted.", { variant: "error" });
         }
 
-    }, [deleteCategoryStatus, enqueueSnackbar]);
+    }, [deleteCastMemberStatus, enqueueSnackbar]);
 
     return (
         <Box maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
@@ -60,22 +60,22 @@ export const CategoryList = () => {
                     variant="contained"
                     color="secondary"
                     component={Link}
-                    to="/categories/create"
+                    to="/cast_members/create"
                     style={{ marginBottom: "1rem" }}
                 >
-                    New Category
+                    New Cast Member
                 </Button>
             </Box>
-            <CategoriesTable
+            <CastMembersTable
                 data={data}
                 isFetching={isFetching}
                 perPage={options.perPage}
                 rowsPerPage={options.rowsPerPage}
-                handleDelete={handleDeleteCategory}
+                handleDelete={handleDeleteCastMember}
                 handleOnPageChange={handleOnPageChange}
                 handleOnPageSizeChange={handleOnPageSizeChange}
                 handleFilterChange={handleOnFilterChange}
             />
         </Box>
-    );
-};
+    )
+}

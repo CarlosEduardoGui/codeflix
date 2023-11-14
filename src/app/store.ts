@@ -1,12 +1,10 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import categoriesReducer, { categoriesApiSlice } from '../features/categories/categorySlice';
-import castMembersReducer from '../features/castMembers/castMembersSlice';
 import { apiSlice } from '../features/api/apiSlice';
 import { castMemberApiSlice } from '../features/castMembers/castMembersSlice';
 
 const reducers = {
   categories: categoriesReducer,
-  castMembers: castMembersReducer,
   [apiSlice.reducerPath]: apiSlice.reducer
 }
 
