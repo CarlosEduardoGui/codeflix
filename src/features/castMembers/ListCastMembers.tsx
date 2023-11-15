@@ -6,22 +6,19 @@ import { Box, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { CastMembersTable } from './components/CastMemberTable';
 
-const initialOptions = {
-    page: 1,
-    search: "",
-    perPage: 10,
-    rowsPerPage: [10, 20, 30]
-}
-
 export const ListCastMembers = () => {
     const { enqueueSnackbar } = useSnackbar();
-    const [options, setOptions] = useState(initialOptions);
+    const [options, setOptions] = useState({
+        page: 1,
+        search: "",
+        perPage: 10,
+        rowsPerPage: [10, 20, 30]
+    });
     const [deleteCastMember, deleteCastMemberStatus] = useDeleteCastMemberMutation();
     const { data, isFetching, error } = useGetCastMembersQuery(options);
 
     function handleOnPageChange(page: number) {
-        options.page = page;
-        setOptions({ ...options, page });
+        setOptions({ ...options, page: page + 1 });
     }
 
     function handleOnPageSizeChange(perPage: number) {
@@ -31,7 +28,7 @@ export const ListCastMembers = () => {
     function handleOnFilterChange(filterModel: GridFilterModel) {
         if (filterModel.quickFilterValues?.length) {
             const search = filterModel.quickFilterValues.join("");
-            options.search = search;
+            
             setOptions({ ...options, search });
         }
 

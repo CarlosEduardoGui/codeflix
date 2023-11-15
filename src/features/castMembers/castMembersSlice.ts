@@ -3,6 +3,15 @@ import { apiSlice } from "../api/apiSlice";
 
 const endpoint = "/cast_members";
 
+export const initialState: CastMember = {
+    id: "",
+    name: "",
+    type: 1,
+    created_at: "",
+    updated_at: "",
+    deleted_at: null
+}
+
 function parseQueryParams(params: CastMemberParams) {
     const queryParams = new URLSearchParams();
 
@@ -29,7 +38,7 @@ function createCastMember(castMember: CastMember) {
     return {
         url: endpoint,
         method: 'POST',
-        data: castMember
+        body: castMember
     }
 }
 
@@ -55,7 +64,7 @@ function updateCastMember(castMember: CastMember) {
     return {
         url: `${endpoint}/${castMember.id}`,
         method: 'PUT',
-        data: castMember
+        body: castMember
     }
 }
 
@@ -72,7 +81,7 @@ export const castMemberApiSlice = apiSlice.injectEndpoints({
             query: getCastMembers,
             providesTags: ["CastMembers"]
         }),
-        getCastMember: query<Result, { id: string }>({
+        getCastMemberById: query<Result, { id: string }>({
             query: getCastMember,
             providesTags: ["CastMembers"]
         }),
@@ -93,7 +102,7 @@ export const castMemberApiSlice = apiSlice.injectEndpoints({
 
 export const {
     useGetCastMembersQuery,
-    useGetCastMemberQuery,
+    useGetCastMemberByIdQuery,
     useDeleteCastMemberMutation,
     useUpdateCastMemberMutation,
     useCreateCastMemberMutation

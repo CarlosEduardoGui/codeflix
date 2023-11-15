@@ -113,20 +113,20 @@ export function CategoriesTable({
                 pagination={true}
                 columns={columns}
                 pageSize={perPage}
+                rowCount={rowCount}
+                loading={isFetching}
                 filterMode={"server"}
                 paginationMode={"server"}
-                loading={isFetching}
-                rowCount={rowCount}
-                rowsPerPageOptions={rowsPerPage}
-                componentsProps={componentProps}
+                checkboxSelection={false}
                 disableColumnFilter={true}
                 disableColumnSelector={true}
                 disableDensitySelector={true}
                 disableSelectionOnClick={false}
-                components={{ Toolbar: GridToolbar }}
+                componentsProps={componentProps}
+                rowsPerPageOptions={rowsPerPage}
                 onPageChange={handleOnPageChange}
+                components={{ Toolbar: GridToolbar }}
                 onPageSizeChange={handleOnPageSizeChange}
-                checkboxSelection={false}
             />
         </Box>
     )

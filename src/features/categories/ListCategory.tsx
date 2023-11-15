@@ -6,22 +6,19 @@ import { useEffect, useState } from "react";
 import { CategoriesTable } from "./components/CategoryTable";
 import { GridFilterModel } from "@mui/x-data-grid";
 
-const initialOptions = {
-    page: 1,
-    search: "",
-    perPage: 10,
-    rowsPerPage: [10, 20, 30]
-}
-
 export const CategoryList = () => {
-    const [options, setOptions] = useState(initialOptions);
+    const [options, setOptions] = useState({
+        page: 1,
+        search: "",
+        perPage: 10,
+        rowsPerPage: [10, 20, 30]
+    });
     const { data, isFetching, error } = useGetCategoriesQuery(options);
     const [deleteCategory, deleteCategoryStatus] = useDeleteCategoryMutation();
     const { enqueueSnackbar } = useSnackbar();
 
     function handleOnPageChange(page: number) {
-        options.page = page;
-        setOptions({ ...options, page });
+        setOptions({ ...options, page: page + 1 });
     }
 
     function handleOnPageSizeChange(perPage: number) {
@@ -31,7 +28,6 @@ export const CategoryList = () => {
     function handleOnFilterChange(filterModel: GridFilterModel) {
         if (filterModel.quickFilterValues?.length) {
             const search = filterModel.quickFilterValues.join("");
-            options.search = search;
             setOptions({ ...options, search });
         }
 

@@ -14,9 +14,9 @@ export interface CastMember {
     id: string;
     name: string;
     type: number;
-    deletedAt: null;
-    createdAt: string;
-    updatedAt: string;
+    deleted_at: null;
+    created_at: string;
+    updated_at: string;
 }
 
 export interface Links {
