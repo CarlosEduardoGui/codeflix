@@ -41,6 +41,12 @@ export function CategoriesTable({
             renderCell: renderNameCell
         },
         {
+            field: 'description',
+            headerName: 'Description',
+            flex: 1,
+            renderCell: renderDescriptionCell
+        },
+        {
             field: 'isActive',
             headerName: 'Active',
             flex: 1,
@@ -62,6 +68,17 @@ export function CategoriesTable({
     ];
 
     function renderNameCell(rowData: GridRenderCellParams) {
+        return (
+            <Link
+                style={{ textDecoration: 'none' }}
+                to={`/categories/edit/${rowData.id}`}
+            >
+                <Typography color="primary">{rowData.value}</Typography>
+            </Link>
+        )
+    }
+
+    function renderDescriptionCell(rowData: GridRenderCellParams) {
         return (
             <Link
                 style={{ textDecoration: 'none' }}
