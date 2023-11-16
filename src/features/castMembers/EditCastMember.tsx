@@ -64,7 +64,6 @@ export const CastMemberEdit = () => {
                     isLoading={false}
                     handleSubmit={handleSubmit}
                     handleChange={handleChange}
-                    handleToggle={handleToggle}
                 />
             </Paper>
         </Box>
