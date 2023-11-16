@@ -85,26 +85,26 @@ export function CastMembersTable({
     const rowCount = data?.meta.total || 0;
 
     return (
-        <Box sx={{ display: "flex", height: 600 }}>
+        <Box sx={{ display: "flex", height: 500 }}>
             <DataGrid
                 rows={rows}
                 pagination={true}
                 columns={columns}
                 pageSize={perPage}
-                filterMode={"server"}
-                paginationMode={"server"}
-                loading={isFetching}
+                filterMode="server"
                 rowCount={rowCount}
-                rowsPerPageOptions={rowsPerPage}
-                componentsProps={componentProps}
+                loading={isFetching}
+                paginationMode="server"
+                checkboxSelection={false}
                 disableColumnFilter={true}
                 disableColumnSelector={true}
                 disableDensitySelector={true}
-                disableSelectionOnClick={false}
-                components={{ Toolbar: GridToolbar }}
+                rowsPerPageOptions={rowsPerPage}
+                componentsProps={componentProps}
                 onPageChange={handleOnPageChange}
+                components={{ Toolbar: GridToolbar }}
+                onFilterModelChange={handleFilterChange}
                 onPageSizeChange={handleOnPageSizeChange}
-                checkboxSelection={false}
             />
         </Box>
     )

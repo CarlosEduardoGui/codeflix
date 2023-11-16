@@ -107,25 +107,25 @@ export function CategoriesTable({
     const rowCount = data?.meta.total || 0;
 
     return (
-        <Box sx={{ display: "flex", height: 600 }}>
+        <Box sx={{ display: "flex", height: 500 }}>
             <DataGrid
                 rows={rows}
                 pagination={true}
                 columns={columns}
                 pageSize={perPage}
+                filterMode="server"
                 rowCount={rowCount}
                 loading={isFetching}
-                filterMode={"server"}
-                paginationMode={"server"}
+                paginationMode="server"
                 checkboxSelection={false}
                 disableColumnFilter={true}
                 disableColumnSelector={true}
                 disableDensitySelector={true}
-                disableSelectionOnClick={false}
-                componentsProps={componentProps}
                 rowsPerPageOptions={rowsPerPage}
+                componentsProps={componentProps}
                 onPageChange={handleOnPageChange}
                 components={{ Toolbar: GridToolbar }}
+                onFilterModelChange={handleFilterChange}
                 onPageSizeChange={handleOnPageSizeChange}
             />
         </Box>
