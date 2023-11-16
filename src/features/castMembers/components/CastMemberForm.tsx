@@ -8,7 +8,6 @@ type Props = {
     isLoading?: boolean;
     handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
     handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    handleToggle: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export function CastMemberForm({
@@ -16,8 +15,7 @@ export function CastMemberForm({
     isdisabled = false,
     isLoading = false,
     handleSubmit,
-    handleChange,
-    handleToggle,
+    handleChange
 }: Props) {
     return (
         <Box p={2}>
@@ -62,9 +60,9 @@ export function CastMemberForm({
                                 type="submit"
                                 variant="contained"
                                 color="secondary"
-                                disabled={isdisabled}
+                                disabled={isdisabled || isLoading}
                             >
-                                Save
+                                {isLoading ? "Loading..." : "Save"}
                             </Button>
                         </Box>
                     </Grid>
