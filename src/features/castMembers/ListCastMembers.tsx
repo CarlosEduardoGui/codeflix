@@ -4,7 +4,7 @@ import { useDeleteCastMemberMutation, useGetCastMembersQuery } from './castMembe
 import { GridFilterModel } from '@mui/x-data-grid';
 import { Box, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
-import { CastMembersTable } from './components/CastMemberTable';
+import { CastMembersTable } from './components/CastMembersTable';
 
 export const ListCastMembers = () => {
     const { enqueueSnackbar } = useSnackbar();
