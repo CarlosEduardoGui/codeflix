@@ -1,7 +1,7 @@
 import { Box, Paper, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Category, useGetCategoryByIdQuery, useUpdateCategoryMutation } from "./categorySlice";
+import { Category, useGetCategoryQuery, useUpdateCategoryMutation } from "./categorySlice";
 import { CategoryForm } from "./components/CategoryForm";
 import { useSnackbar } from "notistack";
 
@@ -9,7 +9,7 @@ export const CategoryEdit = () => {
     const id = useParams().id || "";
     const { enqueueSnackbar } = useSnackbar();
     const [updateCategory, status] = useUpdateCategoryMutation();
-    const { data: category, isFetching } = useGetCategoryByIdQuery({ id });
+    const { data: category, isFetching } = useGetCategoryQuery({ id });
     const [categoryState, setCategoryState] = useState<Category>({
         id: "",
         name: "",

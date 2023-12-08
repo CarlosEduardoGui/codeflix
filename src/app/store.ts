@@ -1,30 +1,25 @@
-import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import categoriesReducer, { categoriesApiSlice } from '../features/categories/categorySlice';
+import { configureStore, ThunkAction, Action, combineReducers, PreloadedState } from '@reduxjs/toolkit';
+import { categoriesApiSlice } from '../features/categories/categorySlice';
 import { apiSlice } from '../features/api/apiSlice';
 import { castMemberApiSlice } from '../features/castMembers/castMembersSlice';
 
-const reducers = {
-  categories: categoriesReducer,
-  [apiSlice.reducerPath]: apiSlice.reducer
+const rootReducer = combineReducers({
+  [apiSlice.reducerPath]: apiSlice.reducer,
+  [categoriesApiSlice.reducerPath]: apiSlice.reducer,
+  [castMemberApiSlice.reducerPath]: apiSlice.reducer,
+})
+
+export const setupStore = (preloadedState?: PreloadedState<RootState>) => {
+  return configureStore({
+    reducer: rootReducer,
+    preloadedState,
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(apiSlice.middleware)
+  })
 }
 
-export const reducer = {
-  ...reducers,
-  [categoriesApiSlice.reducerPath]: reducers[apiSlice.reducerPath],
-}
-
-export const reducerss = {
-  ...reducer,
-  [castMemberApiSlice.reducerPath]: reducers[apiSlice.reducerPath]
-}
-
-export const store = configureStore({
-  reducer: reducerss,
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(apiSlice.middleware)
-});
-
-export type AppDispatch = typeof store.dispatch;
-export type RootState = ReturnType<typeof store.getState>;
+export type AppStore = ReturnType<typeof setupStore>;
+export type AppDispatch = AppStore["dispatch"];
+export type RootState = ReturnType<typeof rootReducer>;
 export type AppThunk<ReturnType = void> = ThunkAction<
   ReturnType,
   RootState,
