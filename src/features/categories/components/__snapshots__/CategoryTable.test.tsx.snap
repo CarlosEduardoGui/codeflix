@@ -20,9 +20,9 @@ exports[`CategoryTable should render CategoryTable wit data 1`] = `
             <button
               aria-haspopup="menu"
               aria-label="Export"
-              aria-labelledby=":r13:"
-              class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall css-1knaqv7-MuiButtonBase-root-MuiButton-root"
-              id=":r12:"
+              aria-labelledby=":r17:"
+              class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall css-1knaqv7-MuiButtonBase-root-MuiButton-root"
+              id=":r16:"
               tabindex="0"
               type="button"
             >
@@ -54,7 +54,7 @@ exports[`CategoryTable should render CategoryTable wit data 1`] = `
               class="MuiFormControl-root MuiTextField-root css-3be3ve-MuiFormControl-root-MuiTextField-root-MuiDataGrid-toolbarQuickFilter"
             >
               <div
-                class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedStart MuiInputBase-adornedEnd css-1ptx2yq-MuiInputBase-root-MuiInput-root"
+                class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedStart MuiInputBase-adornedEnd css-v4u5dn-MuiInputBase-root-MuiInput-root"
               >
                 <svg
                   aria-hidden="true"
@@ -70,7 +70,7 @@ exports[`CategoryTable should render CategoryTable wit data 1`] = `
                 <input
                   aria-invalid="false"
                   class="MuiInputBase-input MuiInput-input MuiInputBase-inputTypeSearch MuiInputBase-inputAdornedStart MuiInputBase-inputAdornedEnd css-c63i49-MuiInputBase-input-MuiInput-input"
-                  id=":r14:"
+                  id=":r18:"
                   placeholder="Search…"
                   type="search"
                   value=""
@@ -105,7 +105,7 @@ exports[`CategoryTable should render CategoryTable wit data 1`] = `
         class="MuiDataGrid-main css-204u17-MuiDataGrid-main"
       >
         <div
-          class="MuiDataGrid-columnHeaders css-f3jnds-MuiDataGrid-columnHeaders"
+          class="MuiDataGrid-columnHeaders css-z8fhq1-MuiDataGrid-columnHeaders"
           style="min-height: 56px; max-height: 56px; line-height: 56px;"
         >
           <div
@@ -177,11 +177,11 @@ exports[`CategoryTable should render CategoryTable wit data 1`] = `
                     class="MuiDataGrid-menuIcon"
                   >
                     <button
-                      aria-controls=":r17:"
+                      aria-controls=":r1d:"
                       aria-haspopup="true"
                       aria-label="Menu"
                       class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall MuiDataGrid-menuIconButton css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"
-                      id=":r18:"
+                      id=":r1e:"
                       tabindex="-1"
                       title="Menu"
                       type="button"
@@ -279,11 +279,11 @@ exports[`CategoryTable should render CategoryTable wit data 1`] = `
                     class="MuiDataGrid-menuIcon"
                   >
                     <button
-                      aria-controls=":r1a:"
+                      aria-controls=":r1g:"
                       aria-haspopup="true"
                       aria-label="Menu"
                       class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall MuiDataGrid-menuIconButton css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"
-                      id=":r1b:"
+                      id=":r1h:"
                       tabindex="-1"
                       title="Menu"
                       type="button"
@@ -381,11 +381,11 @@ exports[`CategoryTable should render CategoryTable wit data 1`] = `
                     class="MuiDataGrid-menuIcon"
                   >
                     <button
-                      aria-controls=":r1d:"
+                      aria-controls=":r1j:"
                       aria-haspopup="true"
                       aria-label="Menu"
                       class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall MuiDataGrid-menuIconButton css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"
-                      id=":r1e:"
+                      id=":r1k:"
                       tabindex="-1"
                       title="Menu"
                       type="button"
@@ -545,28 +545,30 @@ exports[`CategoryTable should render CategoryTable wit data 1`] = `
               />
               <p
                 class="MuiTablePagination-selectLabel css-pdct74-MuiTablePagination-selectLabel"
-                id=":r16:"
+                id=":r1a:"
               >
                 Rows per page:
               </p>
               <div
-                class="MuiInputBase-root MuiInputBase-colorPrimary css-16c50h-MuiInputBase-root-MuiTablePagination-select"
-                variant="standard"
+                class="MuiInputBase-root MuiInputBase-colorPrimary MuiTablePagination-input css-16c50h-MuiInputBase-root-MuiTablePagination-select"
               >
                 <div
+                  aria-controls=":r1b:"
                   aria-expanded="false"
                   aria-haspopup="listbox"
-                  aria-labelledby=":r16: :r15:"
+                  aria-labelledby=":r1a: :r19:"
                   class="MuiSelect-select MuiTablePagination-select MuiSelect-standard MuiInputBase-input css-194a1fa-MuiSelect-select-MuiInputBase-input"
-                  id=":r15:"
-                  role="button"
+                  id=":r19:"
+                  role="combobox"
                   tabindex="0"
                 >
                   10
                 </div>
                 <input
                   aria-hidden="true"
+                  aria-invalid="false"
                   class="MuiSelect-nativeInput css-yf8vq0-MuiSelect-nativeInput"
+                  name=":r1c:"
                   tabindex="-1"
                   value="10"
                 />
@@ -660,9 +662,9 @@ exports[`CategoryTable should render CategoryTable with Inactive value 1`] = `
             <button
               aria-haspopup="menu"
               aria-label="Export"
-              aria-labelledby=":r1j:"
-              class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall css-1knaqv7-MuiButtonBase-root-MuiButton-root"
-              id=":r1i:"
+              aria-labelledby=":r1p:"
+              class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall css-1knaqv7-MuiButtonBase-root-MuiButton-root"
+              id=":r1o:"
               tabindex="0"
               type="button"
             >
@@ -694,7 +696,7 @@ exports[`CategoryTable should render CategoryTable with Inactive value 1`] = `
               class="MuiFormControl-root MuiTextField-root css-3be3ve-MuiFormControl-root-MuiTextField-root-MuiDataGrid-toolbarQuickFilter"
             >
               <div
-                class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedStart MuiInputBase-adornedEnd css-1ptx2yq-MuiInputBase-root-MuiInput-root"
+                class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedStart MuiInputBase-adornedEnd css-v4u5dn-MuiInputBase-root-MuiInput-root"
               >
                 <svg
                   aria-hidden="true"
@@ -710,7 +712,7 @@ exports[`CategoryTable should render CategoryTable with Inactive value 1`] = `
                 <input
                   aria-invalid="false"
                   class="MuiInputBase-input MuiInput-input MuiInputBase-inputTypeSearch MuiInputBase-inputAdornedStart MuiInputBase-inputAdornedEnd css-c63i49-MuiInputBase-input-MuiInput-input"
-                  id=":r1k:"
+                  id=":r1q:"
                   placeholder="Search…"
                   type="search"
                   value=""
@@ -745,7 +747,7 @@ exports[`CategoryTable should render CategoryTable with Inactive value 1`] = `
         class="MuiDataGrid-main css-204u17-MuiDataGrid-main"
       >
         <div
-          class="MuiDataGrid-columnHeaders css-f3jnds-MuiDataGrid-columnHeaders"
+          class="MuiDataGrid-columnHeaders css-z8fhq1-MuiDataGrid-columnHeaders"
           style="min-height: 56px; max-height: 56px; line-height: 56px;"
         >
           <div
@@ -817,11 +819,11 @@ exports[`CategoryTable should render CategoryTable with Inactive value 1`] = `
                     class="MuiDataGrid-menuIcon"
                   >
                     <button
-                      aria-controls=":r1n:"
+                      aria-controls=":r1v:"
                       aria-haspopup="true"
                       aria-label="Menu"
                       class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall MuiDataGrid-menuIconButton css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"
-                      id=":r1o:"
+                      id=":r20:"
                       tabindex="-1"
                       title="Menu"
                       type="button"
@@ -919,11 +921,11 @@ exports[`CategoryTable should render CategoryTable with Inactive value 1`] = `
                     class="MuiDataGrid-menuIcon"
                   >
                     <button
-                      aria-controls=":r1q:"
+                      aria-controls=":r22:"
                       aria-haspopup="true"
                       aria-label="Menu"
                       class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall MuiDataGrid-menuIconButton css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"
-                      id=":r1r:"
+                      id=":r23:"
                       tabindex="-1"
                       title="Menu"
                       type="button"
@@ -1021,11 +1023,11 @@ exports[`CategoryTable should render CategoryTable with Inactive value 1`] = `
                     class="MuiDataGrid-menuIcon"
                   >
                     <button
-                      aria-controls=":r1t:"
+                      aria-controls=":r25:"
                       aria-haspopup="true"
                       aria-label="Menu"
                       class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall MuiDataGrid-menuIconButton css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"
-                      id=":r1u:"
+                      id=":r26:"
                       tabindex="-1"
                       title="Menu"
                       type="button"
@@ -1185,28 +1187,30 @@ exports[`CategoryTable should render CategoryTable with Inactive value 1`] = `
               />
               <p
                 class="MuiTablePagination-selectLabel css-pdct74-MuiTablePagination-selectLabel"
-                id=":r1m:"
+                id=":r1s:"
               >
                 Rows per page:
               </p>
               <div
-                class="MuiInputBase-root MuiInputBase-colorPrimary css-16c50h-MuiInputBase-root-MuiTablePagination-select"
-                variant="standard"
+                class="MuiInputBase-root MuiInputBase-colorPrimary MuiTablePagination-input css-16c50h-MuiInputBase-root-MuiTablePagination-select"
               >
                 <div
+                  aria-controls=":r1t:"
                   aria-expanded="false"
                   aria-haspopup="listbox"
-                  aria-labelledby=":r1m: :r1l:"
+                  aria-labelledby=":r1s: :r1r:"
                   class="MuiSelect-select MuiTablePagination-select MuiSelect-standard MuiInputBase-input css-194a1fa-MuiSelect-select-MuiInputBase-input"
-                  id=":r1l:"
-                  role="button"
+                  id=":r1r:"
+                  role="combobox"
                   tabindex="0"
                 >
                   10
                 </div>
                 <input
                   aria-hidden="true"
+                  aria-invalid="false"
                   class="MuiSelect-nativeInput css-yf8vq0-MuiSelect-nativeInput"
+                  name=":r1u:"
                   tabindex="-1"
                   value="10"
                 />
@@ -1300,9 +1304,9 @@ exports[`CategoryTable should render CategoryTable with loading 1`] = `
             <button
               aria-haspopup="menu"
               aria-label="Export"
-              aria-labelledby=":rj:"
-              class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall css-1knaqv7-MuiButtonBase-root-MuiButton-root"
-              id=":ri:"
+              aria-labelledby=":rl:"
+              class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall css-1knaqv7-MuiButtonBase-root-MuiButton-root"
+              id=":rk:"
               tabindex="0"
               type="button"
             >
@@ -1334,7 +1338,7 @@ exports[`CategoryTable should render CategoryTable with loading 1`] = `
               class="MuiFormControl-root MuiTextField-root css-3be3ve-MuiFormControl-root-MuiTextField-root-MuiDataGrid-toolbarQuickFilter"
             >
               <div
-                class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedStart MuiInputBase-adornedEnd css-1ptx2yq-MuiInputBase-root-MuiInput-root"
+                class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedStart MuiInputBase-adornedEnd css-v4u5dn-MuiInputBase-root-MuiInput-root"
               >
                 <svg
                   aria-hidden="true"
@@ -1350,7 +1354,7 @@ exports[`CategoryTable should render CategoryTable with loading 1`] = `
                 <input
                   aria-invalid="false"
                   class="MuiInputBase-input MuiInput-input MuiInputBase-inputTypeSearch MuiInputBase-inputAdornedStart MuiInputBase-inputAdornedEnd css-c63i49-MuiInputBase-input-MuiInput-input"
-                  id=":rk:"
+                  id=":rm:"
                   placeholder="Search…"
                   type="search"
                   value=""
@@ -1412,7 +1416,7 @@ exports[`CategoryTable should render CategoryTable with loading 1`] = `
           </div>
         </div>
         <div
-          class="MuiDataGrid-columnHeaders css-f3jnds-MuiDataGrid-columnHeaders"
+          class="MuiDataGrid-columnHeaders css-z8fhq1-MuiDataGrid-columnHeaders"
           style="min-height: 56px; max-height: 56px; line-height: 56px;"
         >
           <div
@@ -1484,11 +1488,11 @@ exports[`CategoryTable should render CategoryTable with loading 1`] = `
                     class="MuiDataGrid-menuIcon"
                   >
                     <button
-                      aria-controls=":rn:"
+                      aria-controls=":rr:"
                       aria-haspopup="true"
                       aria-label="Menu"
                       class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall MuiDataGrid-menuIconButton css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"
-                      id=":ro:"
+                      id=":rs:"
                       tabindex="-1"
                       title="Menu"
                       type="button"
@@ -1586,11 +1590,11 @@ exports[`CategoryTable should render CategoryTable with loading 1`] = `
                     class="MuiDataGrid-menuIcon"
                   >
                     <button
-                      aria-controls=":rq:"
+                      aria-controls=":ru:"
                       aria-haspopup="true"
                       aria-label="Menu"
                       class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall MuiDataGrid-menuIconButton css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"
-                      id=":rr:"
+                      id=":rv:"
                       tabindex="-1"
                       title="Menu"
                       type="button"
@@ -1688,11 +1692,11 @@ exports[`CategoryTable should render CategoryTable with loading 1`] = `
                     class="MuiDataGrid-menuIcon"
                   >
                     <button
-                      aria-controls=":rt:"
+                      aria-controls=":r11:"
                       aria-haspopup="true"
                       aria-label="Menu"
                       class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall MuiDataGrid-menuIconButton css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"
-                      id=":ru:"
+                      id=":r12:"
                       tabindex="-1"
                       title="Menu"
                       type="button"
@@ -1783,28 +1787,30 @@ exports[`CategoryTable should render CategoryTable with loading 1`] = `
               />
               <p
                 class="MuiTablePagination-selectLabel css-pdct74-MuiTablePagination-selectLabel"
-                id=":rm:"
+                id=":ro:"
               >
                 Rows per page:
               </p>
               <div
-                class="MuiInputBase-root MuiInputBase-colorPrimary css-16c50h-MuiInputBase-root-MuiTablePagination-select"
-                variant="standard"
+                class="MuiInputBase-root MuiInputBase-colorPrimary MuiTablePagination-input css-16c50h-MuiInputBase-root-MuiTablePagination-select"
               >
                 <div
+                  aria-controls=":rp:"
                   aria-expanded="false"
                   aria-haspopup="listbox"
-                  aria-labelledby=":rm: :rl:"
+                  aria-labelledby=":ro: :rn:"
                   class="MuiSelect-select MuiTablePagination-select MuiSelect-standard MuiInputBase-input css-194a1fa-MuiSelect-select-MuiInputBase-input"
-                  id=":rl:"
-                  role="button"
+                  id=":rn:"
+                  role="combobox"
                   tabindex="0"
                 >
                   10
                 </div>
                 <input
                   aria-hidden="true"
+                  aria-invalid="false"
                   class="MuiSelect-nativeInput css-yf8vq0-MuiSelect-nativeInput"
+                  name=":rq:"
                   tabindex="-1"
                   value="10"
                 />
@@ -1899,7 +1905,7 @@ exports[`CategoryTable should render correctly 1`] = `
               aria-haspopup="menu"
               aria-label="Export"
               aria-labelledby=":r3:"
-              class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall css-1knaqv7-MuiButtonBase-root-MuiButton-root"
+              class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall css-1knaqv7-MuiButtonBase-root-MuiButton-root"
               id=":r2:"
               tabindex="0"
               type="button"
@@ -1932,7 +1938,7 @@ exports[`CategoryTable should render correctly 1`] = `
               class="MuiFormControl-root MuiTextField-root css-3be3ve-MuiFormControl-root-MuiTextField-root-MuiDataGrid-toolbarQuickFilter"
             >
               <div
-                class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedStart MuiInputBase-adornedEnd css-1ptx2yq-MuiInputBase-root-MuiInput-root"
+                class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedStart MuiInputBase-adornedEnd css-v4u5dn-MuiInputBase-root-MuiInput-root"
               >
                 <svg
                   aria-hidden="true"
@@ -1992,7 +1998,7 @@ exports[`CategoryTable should render correctly 1`] = `
           </div>
         </div>
         <div
-          class="MuiDataGrid-columnHeaders css-f3jnds-MuiDataGrid-columnHeaders"
+          class="MuiDataGrid-columnHeaders css-z8fhq1-MuiDataGrid-columnHeaders"
           style="min-height: 56px; max-height: 56px; line-height: 56px;"
         >
           <div
@@ -2064,11 +2070,11 @@ exports[`CategoryTable should render correctly 1`] = `
                     class="MuiDataGrid-menuIcon"
                   >
                     <button
-                      aria-controls=":r7:"
+                      aria-controls=":r9:"
                       aria-haspopup="true"
                       aria-label="Menu"
                       class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall MuiDataGrid-menuIconButton css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"
-                      id=":r8:"
+                      id=":ra:"
                       tabindex="-1"
                       title="Menu"
                       type="button"
@@ -2166,11 +2172,11 @@ exports[`CategoryTable should render correctly 1`] = `
                     class="MuiDataGrid-menuIcon"
                   >
                     <button
-                      aria-controls=":ra:"
+                      aria-controls=":rc:"
                       aria-haspopup="true"
                       aria-label="Menu"
                       class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall MuiDataGrid-menuIconButton css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"
-                      id=":rb:"
+                      id=":rd:"
                       tabindex="-1"
                       title="Menu"
                       type="button"
@@ -2268,11 +2274,11 @@ exports[`CategoryTable should render correctly 1`] = `
                     class="MuiDataGrid-menuIcon"
                   >
                     <button
-                      aria-controls=":rd:"
+                      aria-controls=":rf:"
                       aria-haspopup="true"
                       aria-label="Menu"
                       class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall MuiDataGrid-menuIconButton css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"
-                      id=":re:"
+                      id=":rg:"
                       tabindex="-1"
                       title="Menu"
                       type="button"
@@ -2368,23 +2374,25 @@ exports[`CategoryTable should render correctly 1`] = `
                 Rows per page:
               </p>
               <div
-                class="MuiInputBase-root MuiInputBase-colorPrimary css-16c50h-MuiInputBase-root-MuiTablePagination-select"
-                variant="standard"
+                class="MuiInputBase-root MuiInputBase-colorPrimary MuiTablePagination-input css-16c50h-MuiInputBase-root-MuiTablePagination-select"
               >
                 <div
+                  aria-controls=":r7:"
                   aria-expanded="false"
                   aria-haspopup="listbox"
                   aria-labelledby=":r6: :r5:"
                   class="MuiSelect-select MuiTablePagination-select MuiSelect-standard MuiInputBase-input css-194a1fa-MuiSelect-select-MuiInputBase-input"
                   id=":r5:"
-                  role="button"
+                  role="combobox"
                   tabindex="0"
                 >
                   10
                 </div>
                 <input
                   aria-hidden="true"
+                  aria-invalid="false"
                   class="MuiSelect-nativeInput css-yf8vq0-MuiSelect-nativeInput"
+                  name=":r8:"
                   tabindex="-1"
                   value="10"
                 />

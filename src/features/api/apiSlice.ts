@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-const baseUrl = 'https://codeflixadm.bsite.net';
+export const baseUrl = process.env.API_URL;
 
 export const apiSlice = createApi({
     reducerPath: "api",

@@ -103,6 +103,7 @@ export function CategoriesTable({
                 color="secondary"
                 onClick={() => handleDelete(params.value)}
                 aria-label="delete"
+                data-testid="delete-button"
             >
                 <DeleteIcon />
             </IconButton>
