@@ -4,7 +4,7 @@ export const baseUrl = process.env.REACT_APP_API_URL;
 
 export const apiSlice = createApi({
     reducerPath: "api",
-    tagTypes: ["Categories", "CastMembers"],
+    tagTypes: ["Categories", "CastMembers", "Genres"],
     endpoints: (builder) => ({}),
     baseQuery: fetchBaseQuery({ baseUrl })
 })
