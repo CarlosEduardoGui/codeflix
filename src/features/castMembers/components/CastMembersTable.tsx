@@ -1,4 +1,4 @@
-import { DataGrid, GridColDef, GridFilterModel, GridRenderCellParams, GridToolbar } from "@mui/x-data-grid"
+import { DataGrid, GridColDef, GridFilterModel, GridRenderCellParams, GridToolbar, renderActionsCell } from "@mui/x-data-grid"
 import { Results } from "../../../types/CastMembers"
 import { Typography, IconButton, Box } from "@mui/material"
 import { Link } from "react-router-dom"
@@ -50,8 +50,22 @@ export function CastMembersTable({
             flex: 1,
             field: 'id',
             headerName: 'Actions',
+            renderCell: renderActionsCell
         }
     ];
+
+    function renderActionsCell(params: GridRenderCellParams) {
+        return (
+            <IconButton
+                color="secondary"
+                onClick={() => handleDelete(params.value)}
+                aria-label="delete"
+                data-testid="delete-button"
+            >
+                <DeleteIcon />
+            </IconButton>
+        )
+    }
 
     function renderNameCell(rowData: GridRenderCellParams) {
         return (
@@ -72,7 +86,7 @@ export function CastMembersTable({
         );
     }
 
-    function mateDataOnGridRow(data: Results) {
+    function mapDataOnGridRows(data: Results) {
         const { data: castMembers } = data;
         return castMembers.map((castMember) => ({
             id: castMember.id,
@@ -81,7 +95,7 @@ export function CastMembersTable({
         }))
     }
 
-    const rows = data ? mateDataOnGridRow(data) : [];
+    const rows = data ? mapDataOnGridRows(data) : [];
     const rowCount = data?.meta.total || 0;
 
     return (

@@ -7,7 +7,7 @@ import { CastMember } from "../../types/CastMembers";
 import { CastMemberForm } from "./components/CastMemberForm";
 
 export const CastMemberEdit = () => {
-    const id = useParams().id || "";
+    const id = useParams().id ?? "";
     const { enqueueSnackbar } = useSnackbar();
     const [updateCastMember, status] = useUpdateCastMemberMutation();
     const { data: castMember, isFetching } = useGetCastMemberByIdQuery({ id });
