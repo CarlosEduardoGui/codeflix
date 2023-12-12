@@ -11,6 +11,7 @@ import { ListCastMembers } from "./features/castMembers/ListCastMembers";
 import { CastMemberCreate } from "./features/castMembers/CreateCastMember";
 import { CastMemberEdit } from "./features/castMembers/EditCastMember";
 import { GenreCreate } from "./features/genres/GenreCreate";
+import { GenreEdit } from "./features/genres/GenreEdit";
 
 function App() {
   return (
@@ -43,6 +44,8 @@ function App() {
               <Route path="/cast_members/edi/:id" element={<CastMemberEdit />} />
 
               <Route path="/genres/create" element={<GenreCreate />}/>
+              <Route path="/genres/edit/:id" element={<GenreEdit />}/>
+
               
               <Route path="*" element={
                 <Box sx={{ color: "white" }}>
