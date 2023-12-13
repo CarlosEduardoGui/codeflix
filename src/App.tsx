@@ -12,6 +12,7 @@ import { CastMemberCreate } from "./features/castMembers/CreateCastMember";
 import { CastMemberEdit } from "./features/castMembers/EditCastMember";
 import { GenreCreate } from "./features/genres/GenreCreate";
 import { GenreEdit } from "./features/genres/GenreEdit";
+import { GenresList } from "./features/genres/GenresList";
 
 function App() {
   return (
@@ -38,15 +39,16 @@ function App() {
               <Route path="/categories" element={<CategoryList />} />
               <Route path="/categories/create" element={<CategoryCreate />} />
               <Route path="/categories/edit/:id" element={<CategoryEdit />} />
-              
+
               <Route path="/cast_members" element={<ListCastMembers />} />
               <Route path="/cast_members/create" element={<CastMemberCreate />} />
               <Route path="/cast_members/edi/:id" element={<CastMemberEdit />} />
 
-              <Route path="/genres/create" element={<GenreCreate />}/>
-              <Route path="/genres/edit/:id" element={<GenreEdit />}/>
+              <Route path="/genres" element={<GenresList />} />
+              <Route path="/genres/create" element={<GenreCreate />} />
+              <Route path="/genres/edit/:id" element={<GenreEdit />} />
 
-              
+
               <Route path="*" element={
                 <Box sx={{ color: "white" }}>
                   <Typography variant="h1">404</Typography>
