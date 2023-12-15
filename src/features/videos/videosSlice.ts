@@ -1,5 +1,8 @@
-import { Result, Results, Video, VideoParams } from "../../types/Videos";
+import { Result, Results, Video, VideoParams, VideoPayload } from "../../types/Videos";
 import { apiSlice } from "../api/apiSlice";
+import { Results as CategoriesResults } from "../../types/Category"
+import { Genres as GenresResults } from "../../types/Genre"
+import { Results as CastMembersResults } from "../../types/CastMembers"
 
 const endpointUrl = "/videos";
 
@@ -51,6 +54,30 @@ const getVideos = ({ page = 1, perPage = 10, search = "" }) => {
     return `${endpointUrl}?${parseQueryParams(params)}`;
 }
 
+function getVideo({ id }: { id: string }) {
+    return `${endpointUrl}/${id}`
+}
+
+function getAllCategories() {
+    return `categories?all=true`
+}
+
+function getAllGenres() {
+    return `genres?all=true`
+}
+
+function getAllCastMembers() {
+    return `cast_members?all=true`
+}
+
+function updateVideo(video: VideoPayload) {
+    return {
+        url: `${endpointUrl}/${video.id}`,
+        method: "PUT",
+        body: video
+    }
+}
+
 function deleteVideo({ id }: { id: string }) {
     return {
         url: `${endpointUrl}/${id}`,
@@ -64,6 +91,26 @@ export const videosApiSlice = apiSlice.injectEndpoints({
             query: getVideos,
             providesTags: ["Videos"]
         }),
+        getVideo: query<Result, { id: string }>({
+            query: getVideo,
+            providesTags: ["Videos"]
+        }),
+        getAllCategories: query<CategoriesResults, void>({
+            query: getAllCategories,
+            providesTags: ["Categories"]
+        }),
+        getAllGenres: query<GenresResults, void>({
+            query: getAllGenres,
+            providesTags: ["Genres"]
+        }),
+        getAllCastMembers: query<CastMembersResults, void>({
+            query: getAllCastMembers,
+            providesTags: ["CastMembers"]
+        }),
+        updateVideo: mutation<Result, VideoPayload>({
+            query: updateVideo,
+            invalidatesTags: ["Videos"]
+        }),
         deleteVideo: mutation<Result, { id: string }>({
             query: deleteVideo,
             invalidatesTags: ["Videos"]
@@ -73,6 +120,11 @@ export const videosApiSlice = apiSlice.injectEndpoints({
 
 
 export const {
+    useGetVideoQuery,
     useGetVideosQuery,
+    useGetAllGenresQuery,
+    useGetAllCategoriesQuery,
+    useGetAllCastMembersQuery,
+    useUpdateVideoMutation,
     useDeleteVideoMutation
 } = videosApiSlice;
