@@ -6,6 +6,7 @@ import { Genre } from '../../../types/Genre';
 import { Category } from '../../../types/Category';
 import { CastMember } from '../../../types/CastMembers';
 import { AutocompleteFields } from '../../../components/AutoCompleteFields';
+import { RatingsList } from '../../../components/RatingList';
 
 type Props = {
     video: Video;
@@ -28,14 +29,6 @@ export function VideosForm({
     handleSubmit,
     handleChange
 }: Props) {
-    const ratingOptions = [
-        { label: "L", value: "L" },
-        { label: "10", value: "10" },
-        { label: "12", value: "12" },
-        { label: "14", value: "14" },
-        { label: "16", value: "16" },
-        { label: "18+", value: "18+" },
-    ];
 
     return (
         <Box p={2}>
@@ -134,26 +127,17 @@ export function VideosForm({
 
                     </Grid>
                     <Grid item xs={12} md={6} sx={{ "& .MuiTextField-root:": { my: 2 } }}>
-                        <FormControl>
-                            <FormLabel
-                                id="rating"
-                                sx={{ mb: 2 }}
-                            >
-                                Rating
-                            </FormLabel>
+                        <FormControl fullWidth>
+                            <Box mt={2} mb={2}>
+                                <FormLabel component="legend">Rating</FormLabel>
+                            </Box>
                             <RadioGroup
                                 row
                                 name="rating"
                                 value={video.rating}
                                 onChange={handleChange}
                             >
-                                {ratingOptions.map((option) => (
-                                    <FormControlLabel
-                                        value={option.value}
-                                        control={<Radio />}
-                                        label={option.label}
-                                    />
-                                ))}
+                                <RatingsList isDisabled={isDisabled} />
                             </RadioGroup>
                         </FormControl>
                     </Grid>
