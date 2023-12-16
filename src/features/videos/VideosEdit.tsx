@@ -39,7 +39,7 @@ export function VideosEdit() {
     }
 
     if (status.isError) {
-      enqueueSnackbar("Error updating genre.", { variant: 'error' });
+      enqueueSnackbar("Error updating video.", { variant: 'error' });
     }
   }, [status, enqueueSnackbar]);
 
