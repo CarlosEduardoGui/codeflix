@@ -77,7 +77,7 @@ function deleteGenreMutation({ id }: { id: string }) {
 
 export const genresApiSlice = apiSlice.injectEndpoints({
     endpoints: ({ query, mutation }) => ({
-        getCategories: query<Results, void>({
+        getCategoriesForGenre: query<Results, void>({
             query: getCategories,
         }),
         getGenre: query<Result, { id: string }>({
@@ -105,7 +105,7 @@ export const genresApiSlice = apiSlice.injectEndpoints({
 
 
 export const {
-    useGetCategoriesQuery,
+    useGetCategoriesForGenreQuery,
     useGetGenreQuery,
     useGetGenresQuery,
     useCreateGenreMutation,

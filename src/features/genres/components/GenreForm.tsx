@@ -22,67 +22,70 @@ export default function GenreForm({
     handleChange
 }: Props) {
     return (
-        <Box p={2}>
-            <form onSubmit={handleSubmit}>
-                <Grid container spacing={3}>
-                    <Grid item xs={12}>
-                        <FormControl fullWidth>
-                            <TextField
-                                required
-                                name="name"
-                                label="Name"
-                                value={genre.name}
-                                disabled={isDisabled}
-                                onChange={handleChange}
-                                inputProps={{ "data-testid": "name" }}
-                            />
-                        </FormControl>
-
-                    </Grid>
-                    <Grid item xs={12}>
-                        <Autocomplete
-                            id="combo-box-demo"
-                            multiple
-                            value={genre.categories}
-                            options={categories || []}
-                            loading={isLoading}
-                            disabled={isDisabled || !categories}
-                            getOptionLabel={(option) => option.name}
-                            disablePortal
-                            renderOption={(props, option) => (
-                                <li {...props} key={option.id}>
-                                    {option.name}
-                                </li>
-                            )}
-                            renderInput={(params) =>
+        <>
+            {console.log(genre, categories)}
+            <Box p={2}>
+                <form onSubmit={handleSubmit}>
+                    <Grid container spacing={3}>
+                        <Grid item xs={12}>
+                            <FormControl fullWidth>
                                 <TextField
-                                    {...params}
-                                    label="Categories"
-                                    data-testid="categories-input"
+                                    required
+                                    name="name"
+                                    label="Name"
+                                    value={genre.name}
+                                    disabled={isDisabled}
+                                    onChange={handleChange}
+                                    inputProps={{ "data-testid": "name" }}
                                 />
-                            }
-                            onChange={(_, value) => {
-                                handleChange({ target: { name: "categories", value } } as any);
-                            }}
-                        />
+                            </FormControl>
+
+                        </Grid>
+                        <Grid item xs={12}>
+                            <Autocomplete
+                                id="combo-box-demo"
+                                multiple
+                                value={genre.categories}
+                                options={categories || []}
+                                loading={isLoading}
+                                disabled={isDisabled || !categories}
+                                getOptionLabel={(option) => option.name}
+                                disablePortal
+                                renderOption={(props, option) => (
+                                    <li {...props} key={option.id}>
+                                        {option.name}
+                                    </li>
+                                )}
+                                renderInput={(params) =>
+                                    <TextField
+                                        {...params}
+                                        label="Categories"
+                                        data-testid="categories-input"
+                                    />
+                                }
+                                onChange={(_, value) => {
+                                    handleChange({ target: { name: "categories", value } } as any);
+                                }}
+                            />
+                        </Grid>
+                        <Grid item xs={12}>
+                            <Box display="flex" gap={2}>
+                                <Button variant="contained" component={Link} to="/genres">
+                                    Back
+                                </Button>
+                                <Button
+                                    type="submit"
+                                    variant="contained"
+                                    color="secondary"
+                                    disabled={isDisabled || isLoading}
+                                >
+                                    {isLoading ? "Loading..." : "Save"}
+                                </Button>
+                            </Box>
+                        </Grid>
                     </Grid>
-                    <Grid item xs={12}>
-                        <Box display="flex" gap={2}>
-                            <Button variant="contained" component={Link} to="/genres">
-                                Back
-                            </Button>
-                            <Button
-                                type="submit"
-                                variant="contained"
-                                color="secondary"
-                                disabled={isDisabled || isLoading}
-                            >
-                                {isLoading ? "Loading..." : "Save"}
-                            </Button>
-                        </Box>
-                    </Grid>
-                </Grid>
-            </form>
-        </Box>
+                </form>
+            </Box>
+        </>
     )
 }

@@ -2,7 +2,7 @@ import { useSnackbar } from 'notistack';
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import {
-  useGetCategoriesQuery,
+  useGetCategoriesForGenreQuery,
   initialState as genreInitialState,
   useGetGenreQuery,
   useUpdateGenreMutation,
@@ -15,7 +15,7 @@ import { mapGenreToForm } from './utils';
 export const GenreEdit = () => {
   const id = useParams<{ id: string }>().id as string;
   const { enqueueSnackbar } = useSnackbar();
-  const { data: categories } = useGetCategoriesQuery();
+  const { data: categories } = useGetCategoriesForGenreQuery();
   const { data: genre, isFetching } = useGetGenreQuery({ id });
   const [updateGenre, status] = useUpdateGenreMutation();
   const [genreState, setGenreState] = useState<Genre>(genreInitialState);

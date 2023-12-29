@@ -4,7 +4,7 @@ import { useSnackbar } from "notistack"
 import {
     initialState,
     useCreateGenreMutation,
-    useGetCategoriesQuery
+    useGetCategoriesForGenreQuery
 } from "./genreSlice";
 import { useEffect, useState } from "react";
 import { Genre } from "../../types/Genre"
@@ -12,7 +12,7 @@ import { mapGenreToForm } from "./utils";
 
 export const GenreCreate = () => {
     const { enqueueSnackbar } = useSnackbar();
-    const { data: categories } = useGetCategoriesQuery();
+    const { data: categories } = useGetCategoriesForGenreQuery();
     const [createGenre, status] = useCreateGenreMutation();
     const [genreState, setGenreState] = useState<Genre>(initialState);
 
