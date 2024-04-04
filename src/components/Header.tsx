@@ -3,7 +3,15 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 
-export function Header({ toggle, theme }: { toggle: () => void, theme: string }) {
+export function Header({
+    toggle,
+    theme,
+    onDrawerToggle
+}: {
+    toggle: () => void,
+    theme: string,
+    onDrawerToggle?: () => void
+}) {
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
@@ -13,7 +21,8 @@ export function Header({ toggle, theme }: { toggle: () => void, theme: string })
                         edge="start"
                         color="inherit"
                         aria-label="menu"
-                        sx={{ mr: 2 }}
+                        onClick={onDrawerToggle}
+                        sx={{ mr: 2, display: { sm: "none" } }}
                     >
                         <MenuIcon />
                     </IconButton>
@@ -21,9 +30,7 @@ export function Header({ toggle, theme }: { toggle: () => void, theme: string })
                         Codeflix
                     </Typography>
 
-                    <IconButton sx={{ ml: 1 }} onClick={toggle} color="inherit">
-                        {theme === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
-                    </IconButton>
+                    <Box sx={{flexGrow: 1}} />
 
                     <Button color="inherit">Login</Button>
                 </Toolbar>
