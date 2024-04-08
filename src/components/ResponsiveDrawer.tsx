@@ -34,28 +34,22 @@ export default function ResponsiveDrawer({
     const drawer = (
         <div>
             <Toolbar>
-                <Typography
-                    variant='h6'
-                    noWrap
-                    component="div"
-                >
+                <Typography variant="h6" noWrap component="div">
                     Codeflix
                 </Typography>
-                <Divider />
             </Toolbar>
+            <Divider />
             <List>
                 {routes.map((route) => (
                     <Link
-                        style={{ textDecoration: 'none', color: 'inherit' }}
                         key={route.path}
                         to={route.path}
                         onClick={onClose}
+                        style={{ textDecoration: "none", color: "inherit" }}
                     >
                         <ListItem disablePadding>
                             <ListItemButton>
-                                <ListItemText>
-                                    {route.name}
-                                </ListItemText>
+                                <ListItemText>{route.name}</ListItemText>
                             </ListItemButton>
                         </ListItem>
                     </Link>
@@ -89,7 +83,11 @@ export default function ResponsiveDrawer({
                 open
                 sx={{
                     display: { xs: "none", sm: "block" },
-                    '& .MuiDrawer-paper': { boxSizing: "border-box", width: drawerWidth }
+                    "& .MuiDrawer-paper": {
+                        boxSizing: "border-box",
+                        width: drawerWidth,
+                        backgroundColor: "background.default",
+                    },
                 }}
             >
                 {drawer}

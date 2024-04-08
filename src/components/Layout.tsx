@@ -23,7 +23,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                     position='fixed'
                     sx={{
                         width: { sm: `calc(100% - ${drawerWidth}}px)` },
-                        nl: { sm: `${drawerWidth}px` }
+                        ml: { sm: `${drawerWidth}px` }
                     }}
                 >
                     <Header
